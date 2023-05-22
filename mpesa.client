@@ -1,0 +1,28 @@
+# Check balance
+response = api.check_balance(account_number='YOUR_ACCOUNT_NUMBER')
+if response.get('success'):
+    balance = response.get('balance')
+    print(f"Account balance: {balance}")
+else:
+    print("Failed to check balance.")
+
+# Deposit funds
+response = api.deposit_funds(account_number='YOUR_ACCOUNT_NUMBER', amount=100)
+if response.get('success'):
+    print("Deposit successful.")
+else:
+    print("Failed to deposit funds.")
+
+# Withdraw funds
+response = api.withdraw_funds(account_number='YOUR_ACCOUNT_NUMBER', amount=50)
+if response.get('success'):
+    print("Withdrawal successful.")
+else:
+    print("Failed to withdraw funds.")
+
+# Transfer funds
+response = api.transfer_funds(sender_account='YOUR_SENDER_ACCOUNT', recipient_account='RECIPIENT_ACCOUNT', amount=30)
+if response.get('success'):
+    print("Transfer successful.")
+else:
+    print("Failed to transfer funds.")
